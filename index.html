@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>G.O Omoloye — Data & BI Analyst Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+<style>
+:root{
+  --navy:#1B2A6B;--navy-dark:#111d4e;--navy-light:#243580;
+  --gold:#c9960c;--gold-l:#e0aa1a;--gold-p:#f0c040;
+  --gold-bg:rgba(201,150,12,.12);--gold-bg2:rgba(201,150,12,.06);
+  --bg:#07090f;--bg2:#0d1020;--bg3:#131828;--bg4:#1a2035;
+  --border:rgba(201,150,12,.18);--border2:rgba(201,150,12,.3);
+  --text:#f0ede8;--text2:#8899bb;--text3:#445;
+  --green:#00c853;--green-bg:rgba(0,200,83,.1);
+  --blue:#2979ff;--blue-bg:rgba(41,121,255,.1);
+  --red:#ff3b3b;--red-bg:rgba(255,59,59,.1);
+  --r:12px;--r2:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold-l)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,9,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.nav-brand span{color:var(--gold)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:#000;font-size:12px;font-weight:700;padding:7px 18px;border-radius:6px;letter-spacing:.06em;text-transform:uppercase;transition:opacity .2s}
+.nav-cta:hover{opacity:.85;color:#000}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;background:radial-gradient(ellipse at 30% 50%,rgba(27,42,107,.4) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(201,150,12,.08) 0%,transparent 50%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B2A6B' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;opacity:.4}
+.hero-content{max-width:700px;text-align:center;position:relative;z-index:1}
+.hero-badge{display:inline-block;background:var(--gold-bg);border:1px solid var(--border2);border-radius:30px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,80px);letter-spacing:.04em;line-height:.92;margin-bottom:.75rem}
+.hero-name span{color:var(--gold)}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(18px,3vw,26px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);margin-bottom:1.25rem}
+.hero-title span{color:var(--gold-p)}
+.hero-sub{font-size:15px;color:var(--text2);max-width:520px;margin:0 auto 2.5rem;line-height:1.75}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.btn-primary{background:linear-gradient(135deg,var(--gold),#a07808);color:#000;font-weight:700;font-size:14px;padding:13px 28px;border-radius:var(--r);transition:opacity .2s;font-family:'DM Sans',sans-serif}
+.btn-primary:hover{opacity:.85;color:#000}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text);font-weight:600;font-size:14px;padding:13px 28px;border-radius:var(--r);transition:all .2s;font-family:'DM Sans',sans-serif}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.hstat-val{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--gold);line-height:1;text-align:center}
+.hstat-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text2);text-align:center;margin-top:2px}
+
+/* ── SECTIONS ── */
+section{padding:5rem 2rem}
+.section-inner{max-width:960px;margin:0 auto}
+.sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,48px);letter-spacing:.04em;margin-bottom:.5rem}
+.sec-sub{font-size:14px;color:var(--text2);max-width:520px;margin-bottom:2.5rem;line-height:1.7}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.about-text p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:1rem}
+.about-text p strong{color:var(--text)}
+.skills-list{display:flex;flex-direction:column;gap:10px}
+.skill-row{display:flex;align-items:center;gap:10px}
+.skill-name{font-size:12px;font-weight:600;color:var(--text);min-width:120px}
+.skill-bar{flex:1;height:6px;background:var(--bg4);border-radius:3px;overflow:hidden}
+.skill-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--navy),var(--gold))}
+.skill-pct{font-size:11px;color:var(--text2);min-width:32px;text-align:right}
+.cert-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
+.cert-chip{background:var(--gold-bg);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:600;color:var(--gold-p)}
+
+/* ── PROJECTS ── */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.proj-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:transform .2s,border-color .2s}
+.proj-card:hover{transform:translateY(-4px);border-color:var(--border2)}
+.proj-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.proj-visual{background:linear-gradient(135deg,var(--navy-dark),var(--bg3));padding:2rem;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:200px;position:relative;overflow:hidden}
+.proj-visual::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(201,150,12,.1),transparent 60%)}
+.proj-icon{font-size:52px;margin-bottom:.5rem;position:relative;z-index:1}
+.proj-visual-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);position:relative;z-index:1;text-align:center}
+.proj-body{padding:1.5rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem}
+.proj-tag{background:var(--bg4);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.06em}
+.proj-tag.live{background:var(--green-bg);border-color:rgba(0,200,83,.25);color:var(--green)}
+.proj-tag.navy{background:rgba(27,42,107,.3);border-color:rgba(27,42,107,.5);color:#7b9bff}
+.proj-title{font-size:16px;font-weight:700;margin-bottom:.5rem;color:var(--text)}
+.proj-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:1rem}
+.proj-metrics{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.proj-metric{text-align:center}
+.proj-metric-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold);line-height:1}
+.proj-metric-label{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--text2)}
+.proj-links{display:flex;gap:8px;flex-wrap:wrap}
+.proj-link{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;transition:all .2s}
+.proj-link.primary{background:var(--gold);color:#000}
+.proj-link.primary:hover{opacity:.85;color:#000}
+.proj-link.secondary{background:var(--bg4);border:1px solid rgba(255,255,255,.1);color:var(--text2)}
+.proj-link.secondary:hover{border-color:var(--gold);color:var(--gold)}
+.proj-features{list-style:none;margin-bottom:1rem}
+.proj-features li{font-size:12px;color:var(--text2);padding:3px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.5}
+.proj-features li::before{content:'▸';color:var(--gold);flex-shrink:0;margin-top:1px}
+
+/* ── EXPERIENCE ── */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(180deg,var(--gold),transparent)}
+.tl-item{position:relative;margin-bottom:2rem;padding-left:1.5rem}
+.tl-dot{position:absolute;left:-2.25rem;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+.tl-dates{font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.tl-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:2px}
+.tl-company{font-size:13px;color:var(--text2);margin-bottom:.75rem;font-style:italic}
+.tl-bullets{list-style:none}
+.tl-bullets li{font-size:13px;color:var(--text2);padding:3px 0;display:flex;gap:8px;line-height:1.6}
+.tl-bullets li::before{content:'▸';color:var(--gold);flex-shrink:0}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.svc-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem;transition:all .2s;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--gold))}
+.svc-card:hover{transform:translateY(-3px);border-color:var(--border2)}
+.svc-icon{font-size:32px;margin-bottom:.75rem}
+.svc-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.5rem}
+.svc-desc{font-size:12px;color:var(--text2);line-height:1.6}
+
+/* ── CONTACT ── */
+.contact-wrap{background:linear-gradient(135deg,var(--navy-dark),var(--bg2));border:1px solid var(--border2);border-radius:var(--r2);padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.contact-wrap::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(201,150,12,.12),transparent 70%)}
+.contact-wrap::after{content:'';position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(27,42,107,.3),transparent 70%)}
+.contact-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,44px);letter-spacing:.04em;margin-bottom:.5rem;position:relative;z-index:1}
+.contact-sub{font-size:14px;color:var(--text2);margin-bottom:2rem;position:relative;z-index:1}
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;position:relative;z-index:1}
+.contact-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:1.25rem;text-align:center}
+.contact-card i{font-size:24px;color:var(--gold);margin-bottom:.5rem;display:block}
+.contact-card-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--text2);margin-bottom:4px}
+.contact-card-val{font-size:13px;font-weight:600;color:var(--text)}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),#a07808);color:#000;font-weight:700;font-size:15px;padding:14px 32px;border-radius:var(--r);position:relative;z-index:1;transition:opacity .2s}
+.contact-btn:hover{opacity:.85;color:#000}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center}
+footer p{font-size:12px;color:var(--text2)}
+footer span{color:var(--gold)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .proj-card.featured{grid-column:auto;display:block}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .contact-cards{grid-template-columns:1fr}
+  .hero-stats{gap:2rem}
+}
+@media(max-width:480px){
+  section{padding:3.5rem 1.25rem}
+  .services-grid{grid-template-columns:1fr}
+  nav{padding:0 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">G.O <span>Omoloye</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="https://wa.me/2348162525880" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">📊 Open to Work · Lagos, Nigeria</div>
+    <div class="hero-name">G.O<br/><span>OMOLOYE</span></div>
+    <div class="hero-title">Data Analyst · <span>Business Intelligence</span> · Financial Analyst</div>
+    <p class="hero-sub">I turn raw business data into clear decisions. From live dashboards to procurement analytics — I build systems that help businesses stop guessing and start growing.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="https://mollz11.github.io/insightedge" target="_blank" class="btn-outline">🌐 Live Platform</a>
+      <a href="https://linkedin.com/in/gideonomoloye" target="_blank" class="btn-outline">LinkedIn</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-val">5+</div><div class="hstat-label">Years Experience</div></div>
+      <div><div class="hstat-val">300+</div><div class="hstat-label">Vendors Managed</div></div>
+      <div><div class="hstat-val">3+</div><div class="hstat-label">Live Projects</div></div>
+      <div><div class="hstat-val">2</div><div class="hstat-label">Certifications</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <div class="sec-eyebrow">Who I Am</div>
+    <div class="sec-title">About Me</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a <strong>Data & Business Intelligence Analyst</strong> with 5+ years of experience across telecommunications, engineering and SME analytics. My background spans financial management, procurement analytics and database architecture.</p>
+        <p>I founded <strong>InsightEdge Analytics</strong> — a live BI platform currently serving Lagos SMEs — because I believe every business deserves the kind of data visibility that used to be reserved for large corporations.</p>
+        <p>I am certified in <strong>Google Data Analytics</strong> and <strong>Business Intelligence</strong>, and I am proficient in SQL, Advanced Excel, Power Query and Google Data Studio.</p>
+        <div class="cert-chips">
+          <div class="cert-chip">Google Data Analytics 2024</div>
+          <div class="cert-chip">BI Specialisation 2025</div>
+          <div class="cert-chip">BSc Accounting — UNIOSUN</div>
+        </div>
+      </div>
+      <div>
+        <div class="skills-list">
+          <div class="skill-row"><div class="skill-name">SQL & Database</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><div class="skill-pct">85%</div></div>
+          <div class="skill-row"><div class="skill-name">Advanced Excel</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div><div class="skill-pct">90%</div></div>
+          <div class="skill-row"><div class="skill-name">Google Data Studio</div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div><div class="skill-pct">80%</div></div>
+          <div class="skill-row"><div class="skill-name">Power Query</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div><div class="skill-pct">85%</div></div>
+          <div class="skill-row"><div class="skill-name">KPI Dashboards</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div><div class="skill-pct">88%</div></div>
+          <div class="skill-row"><div class="skill-name">Data Visualisation</div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div><div class="skill-pct">78%</div></div>
+          <div class="skill-row"><div class="skill-name">Procurement Analytics</div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div><div class="skill-pct">92%</div></div>
+          <div class="skill-row"><div class="skill-name">Web Development</div><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div><div class="skill-pct">72%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="sec-eyebrow">What I Have Built</div>
+    <div class="sec-title">Projects & Portfolio</div>
+    <p class="sec-sub">Real projects with measurable outcomes — from live platforms to data analytics case studies.</p>
+    <div class="projects-grid">
+
+      <!-- InsightEdge — Featured -->
+      <div class="proj-card featured">
+        <div class="proj-visual">
+          <div class="proj-icon">📊</div>
+          <div class="proj-visual-title">InsightEdge Analytics<br/>Live Platform</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags">
+            <span class="proj-tag live">🟢 Live</span>
+            <span class="proj-tag navy">JavaScript</span>
+            <span class="proj-tag navy">SQL Architecture</span>
+            <span class="proj-tag navy">GitHub Pages</span>
+            <span class="proj-tag navy">Role-Based Access</span>
+          </div>
+          <div class="proj-title">InsightEdge Analytics — Business Intelligence Platform</div>
+          <div class="proj-desc">A full multi-client business intelligence platform serving Lagos SMEs across 11 industry verticals. Features real-time sales tracking, inventory management, expiry alerts, WhatsApp report integration and a secure role-based admin panel.</div>
+          <div class="proj-metrics">
+            <div class="proj-metric"><div class="proj-metric-val">17+</div><div class="proj-metric-label">Client Accounts</div></div>
+            <div class="proj-metric"><div class="proj-metric-val">11</div><div class="proj-metric-label">Business Types</div></div>
+            <div class="proj-metric"><div class="proj-metric-val">100%</div><div class="proj-metric-label">Role Secured</div></div>
+            <div class="proj-metric"><div class="proj-metric-val">30%</div><div class="proj-metric-label">Stock Loss Reduction</div></div>
+          </div>
+          <ul class="proj-features">
+            <li>Architected relational database schema with 3-tier role-based access control (Admin, Agent, Client)</li>
+            <li>Built automated reporting pipelines saving clients 3 to 5 hours of manual tracking per week</li>
+            <li>Implemented WhatsApp report integration sending full business summaries in one tap</li>
+            <li>Supports Pharmacy, Supermarket, Bar, Restaurant, Logistics, Security, Salon, Rental and more</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://mollz11.github.io/insightedge" target="_blank" class="proj-link primary"><i class="ti ti-external-link"></i> View Live Platform</a>
+            <a href="#contact" class="proj-link secondary"><i class="ti ti-message"></i> Request Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fleet Pitch -->
+      <div class="proj-card">
+        <div class="proj-visual" style="min-height:160px">
+          <div class="proj-icon">🚗</div>
+          <div class="proj-visual-title">Fleet Management<br/>Pitch Deck</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags">
+            <span class="proj-tag navy">Business Analysis</span>
+            <span class="proj-tag navy">Pitch Deck</span>
+            <span class="proj-tag navy">HTML/CSS</span>
+          </div>
+          <div class="proj-title">Automobile Fleet Loophole Analysis</div>
+          <div class="proj-desc">A professional 5-section pitch document identifying and closing revenue leakage loopholes in Uber fleet management operations across Lagos — including ROI modelling and pricing strategy.</div>
+          <ul class="proj-features">
+            <li>Identified 8 critical operational loopholes with risk ratings and direct cost estimates</li>
+            <li>Modelled ₦2.4M+ monthly revenue leakage for a 20-car fleet operation</li>
+            <li>Built before vs after ROI comparison demonstrating week-one payback period</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://mollz11.github.io/insightedge" target="_blank" class="proj-link primary"><i class="ti ti-external-link"></i> View Pitch</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supply Chain Dashboard -->
+      <div class="proj-card">
+        <div class="proj-visual" style="min-height:160px">
+          <div class="proj-icon">📦</div>
+          <div class="proj-visual-title">Supply Chain<br/>Dashboard</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags">
+            <span class="proj-tag navy">SQL</span>
+            <span class="proj-tag navy">Advanced Excel</span>
+            <span class="proj-tag navy">Power Query</span>
+          </div>
+          <div class="proj-title">Supply Chain Performance Dashboard</div>
+          <div class="proj-desc">End-to-end SQL and Excel analytics project analysing 1,000+ Purchase Order records to identify procurement bottlenecks and build automated KPI tracking for telecom supply chain management.</div>
+          <ul class="proj-features">
+            <li>Analysed 1,000+ PO records using SQL JOINs, aggregations and subqueries</li>
+            <li>Identified 3 bottlenecks reducing procurement efficiency by 15%</li>
+            <li>Built Power Query automation reducing manual processing time by 40%</li>
+          </ul>
+          <div class="proj-links">
+            <a href="#contact" class="proj-link primary"><i class="ti ti-message"></i> Request Case Study</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <div class="sec-eyebrow">My Background</div>
+    <div class="sec-title">Work Experience</div>
+    <p class="sec-sub">5+ years of progressive experience across telecommunications, engineering and analytics.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-dates">2026 – Present</div>
+        <div class="tl-title">Founder & Business Data Analyst</div>
+        <div class="tl-company">InsightEdge Analytics · Lagos, Nigeria (Remote)</div>
+        <ul class="tl-bullets">
+          <li>Built and deployed live multi-client BI platform serving 17+ SME accounts across Lagos</li>
+          <li>Designed relational database with role-based access control and automated reporting pipelines</li>
+          <li>Reduced client stock losses by 30% and manual tracking time by 3 to 5 hours per week</li>
+          <li>Growing client base through strategic pitching, demos and stakeholder presentations</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-dates">2024 – Present</div>
+        <div class="tl-title">Data Consultant & Procurement Analyst</div>
+        <div class="tl-company">Freelance / Capstone Project · Lagos, Nigeria</div>
+        <ul class="tl-bullets">
+          <li>Analysed 1,000+ Purchase Order records using SQL to identify supply chain bottlenecks</li>
+          <li>Built KPI dashboards tracking vendor lead times, OTIF delivery and spend compliance</li>
+          <li>Reduced manual data processing time by 40% through Power Query automation</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-dates">2019 – 2021</div>
+        <div class="tl-title">Procurement & Invoicing Officer</div>
+        <div class="tl-company">Smile Telecommunications Nigeria · Lagos, Nigeria</div>
+        <ul class="tl-bullets">
+          <li>Managed end-to-end invoicing for 300+ active vendors using Sage ERP with 100% accuracy</li>
+          <li>Reduced invoice processing errors by 30% through systematic data validation</li>
+          <li>Generated automated weekly reports enabling management to track vendor compliance 40% faster</li>
+          <li>Applied SQL querying to extract and analyse procurement datasets for supply chain visibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="sec-eyebrow">What I Offer</div>
+    <div class="sec-title">Services</div>
+    <p class="sec-sub">Data solutions tailored to businesses and organisations of every size.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">📊</div>
+        <div class="svc-title">Business Intelligence Dashboards</div>
+        <div class="svc-desc">Custom real-time KPI dashboards that give you full visibility into your sales, stock, expenses and performance — updated automatically.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🗄️</div>
+        <div class="svc-title">Data Analysis & SQL Reporting</div>
+        <div class="svc-desc">Deep-dive analysis of your business data using SQL and Excel. I find the patterns, bottlenecks and opportunities hidden in your numbers.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📦</div>
+        <div class="svc-title">Inventory & Stock Management</div>
+        <div class="svc-desc">Automated expiry tracking, restock alerts and inventory dashboards — so you never lose money to expired or out-of-stock products again.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🚛</div>
+        <div class="svc-title">Procurement & Supply Chain Analytics</div>
+        <div class="svc-desc">Vendor performance tracking, spend analysis and procurement KPI frameworks that close loopholes and improve operational efficiency.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📱</div>
+        <div class="svc-title">SME Business Platforms</div>
+        <div class="svc-desc">Custom web-based business management tools built for your exact industry — pharmacy, bar, logistics, salon, rental and more.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📋</div>
+        <div class="svc-title">Business Pitch & Strategy Decks</div>
+        <div class="svc-desc">Data-backed pitch documents and business proposals that present your case with numbers, ROI modelling and professional design.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--bg2);border-top:1px solid var(--border)">
+  <div class="section-inner">
+    <div class="contact-wrap">
+      <div class="sec-eyebrow" style="position:relative;z-index:1">Get In Touch</div>
+      <div class="contact-title" style="color:var(--text)">LET'S WORK <span style="color:var(--gold)">TOGETHER</span></div>
+      <p class="contact-sub" style="position:relative;z-index:1">Whether you need a dashboard, a data analysis or a full business intelligence platform — I am ready to help your business grow smarter.</p>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <i class="ti ti-phone"></i>
+          <div class="contact-card-label">WhatsApp / Call</div>
+          <div class="contact-card-val">08162525880</div>
+        </div>
+        <div class="contact-card">
+          <i class="ti ti-mail"></i>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-val">omoloyegideon@gmail.com</div>
+        </div>
+        <div class="contact-card">
+          <i class="ti ti-brand-linkedin"></i>
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-val">linkedin.com/in/gideonomoloye</div>
+        </div>
+      </div>
+      <a href="https://wa.me/2348162525880?text=Hi%20Gideon%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" class="contact-btn">
+        <i class="ti ti-brand-whatsapp"></i> Send Me a WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><span>G.O Omoloye</span> · Data & Business Intelligence Analyst · Lagos, Nigeria · 2026</p>
+  <p style="margin-top:6px">Built by <span>InsightEdge Analytics</span> · <a href="https://mollz11.github.io/insightedge" target="_blank">mollz11.github.io/insightedge</a></p>
+</footer>
+
+</body>
+</html>
